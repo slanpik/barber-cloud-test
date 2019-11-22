@@ -17,5 +17,29 @@ a {
 }
 
 .color-btn {
-    color: #3bcf7a;
+    color: #3bcf7a !important;
+}
+
+.dotRed {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dotBlue {
+    height: 15px;
+    width: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dotYellow {
+    height: 15px;
+    width: 15px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
 }

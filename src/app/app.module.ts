@@ -12,7 +12,8 @@ import { PublishComponent } from './component/publish/publish.component';
 import { InfoServicesService } from './services/info-services.service';
 
 import { ImagePipe } from './pipes/image.pipe';
-
+import { AddCommentComponent } from './component/partial/add-comment/add-comment.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,20 @@ import { ImagePipe } from './pipes/image.pipe';
     CardComponent,
     CommentComponent,
     PublishComponent,
-    ImagePipe
+    ImagePipe,
+    AddCommentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [InfoServicesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddCommentComponent
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Agregar comentario</h4>
+    
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-offset-1 col-md-11">
+            <div class="form-group">
+                <input  type="text"
+                        [(ngModel)]="commentNew"
+                        name="commentNew"
+                        (keyup.enter)="saveComment()"
+                        placeholder="Escribe un comentario"
+                        class="form-control"
+                        >
+            </div>
+        </div>
+    </div>
+</div>

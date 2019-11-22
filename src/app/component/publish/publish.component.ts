@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-publish',
@@ -9,7 +10,7 @@ import { User } from 'src/app/interfaces/user';
 export class PublishComponent {
 
   publish: string = ''
-  @Output() public sendPublish:EventEmitter<User> = new EventEmitter<User>()
+  @Output() public sendPublish: EventEmitter<User> = new EventEmitter<User>()
 
   constructor() { }
 
@@ -22,7 +23,7 @@ export class PublishComponent {
     }
     const user: User = {
       text: this.publish,
-      date: new Date(),
+      date: moment().fromNow(),
       user: {
         name: 'Francisco Sanchez',
         image: ''
@@ -58,7 +59,6 @@ export class PublishComponent {
    * @param publishTmp 
    */
   sendPublishData( publishTmp: any ) {
-    // this.sendPublish = publishTmp
     this.sendPublish.emit(publishTmp)
   }
 }

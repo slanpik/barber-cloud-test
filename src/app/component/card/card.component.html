@@ -10,10 +10,10 @@
                 <p class="card-text"> {{data.text}} </p>
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="#" class="color-btn ">Reaccionar</a>
+                        <a (click)="reaction()" class="color-btn">Reaccionar</a>
                     </div>
                     <div class="col-md-3">
-                        <a href="#" class="color-btn ">Comentar</a>
+                        <a (click)="addComment()" class="color-btn">Comentar</a>
                     </div>
                 </div>
             </div>
@@ -22,6 +22,9 @@
     <div class="card-footer" style="background: white !important;">
         <div class="row"  >       
             <div class="col-md-6 text-left">
+                <span class="dotYellow"></span>
+                <span class="dotBlue"></span>
+                <span class="dotRed"></span>
                 <span class=" title-name"> {{total}} </span>
             </div>
     
@@ -31,4 +34,4 @@
         </div>
     </div>
 </div>
-<app-comment [comments]="data.comments"></app-comment>
+<app-comment [comments]="data.comments" (addComment)="addedComment($event)"></app-comment>

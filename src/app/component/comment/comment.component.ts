@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Comment } from 'src/app/interfaces/comment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-comment',
@@ -9,6 +10,8 @@ import { Comment } from 'src/app/interfaces/comment';
 export class CommentComponent {
   
   @Input() comments: Comment[]
+  @Output() public addComment: EventEmitter<boolean> = new EventEmitter<boolean>()
+  
   commentNew: string = ""
 
   constructor() { }
@@ -19,7 +22,7 @@ export class CommentComponent {
     }
     const comment: any = {
         text: this.commentNew,
-        date: new Date(),
+        date: moment().fromNow(),
         user: {
           name: 'Francisco Sanchez',
           image: ''
@@ -27,5 +30,6 @@ export class CommentComponent {
     }
     this.commentNew = ''
     this.comments.push(comment)
+    this.addComment.emit(true)
   }
 }
