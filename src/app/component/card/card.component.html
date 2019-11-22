@@ -1,0 +1,34 @@
+<div class="card animated fadeIn fast">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-1">
+                <img [src]="data.user.image | image" alt="" class="avatar-img">
+            </div>
+            <div class="col-md-11">
+                <h5 class="card-title title-name"> {{data.user.name}} </h5>
+                <p class="text-muted" style="font-size: 0.8em;"> Hace {{data.date}}</p>
+                <p class="card-text"> {{data.text}} </p>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#" class="color-btn ">Reaccionar</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="color-btn ">Comentar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer" style="background: white !important;">
+        <div class="row"  >       
+            <div class="col-md-6 text-left">
+                <span class=" title-name"> {{total}} </span>
+            </div>
+    
+            <div class="col-md-6 text-right">
+                <span class="text-muted" *ngIf="numComment != 0"> {{numComment}} Comentarios </span>
+            </div>
+        </div>
+    </div>
+</div>
+<app-comment [comments]="data.comments"></app-comment>

@@ -1,0 +1,22 @@
+<div class="card animated fadeIn fast">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-11">
+				<div class="form-group">
+					<input  type="text"
+									[(ngModel)]="publish"
+									name="publish"
+									(keyup.enter)="publishComment()"
+									placeholder="Escribe aquí tu estado"
+									class="form-control color-btn"
+									>
+					<div class="text-right">
+						<hr>
+						<a (click)="publishComment()" class="btn btn-success">Publicar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    

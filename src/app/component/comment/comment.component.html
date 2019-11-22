@@ -1,0 +1,27 @@
+<div class="card animated fadeIn fast background-color-card">
+    <div class="card-body">
+        <div class="row" *ngFor="let comment of comments" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <img [src]="comment.user.image | image" alt="" class="avatar-img">
+            </div>
+            <div class="col-md-11">
+                <span class="title-name"> <b> {{comment.user.name}} </b> </span>
+                <span class="card-text"> {{comment.text}} </span>
+                <p class="text-muted" style="font-size: 0.8em;"> Hace {{comment.date}}</p>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-offset-1 col-md-11">
+                <div class="form-group">
+                    <input  type="text"
+                            [(ngModel)]="commentNew"
+                            name="commentNew"
+                            (keyup.enter)="saveComment()"
+                            placeholder="Escribe un comentario"
+                            class="form-control"
+                            >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
